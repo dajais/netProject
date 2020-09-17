@@ -1,0 +1,8 @@
+﻿@model IEnumerable<BijouWorld.Models.Product>
+
+@foreach (var item in Model) if (item.Category == "1")
+	{
+		<img class="proFoto" src="@Html.DisplayFor(modelItem => item.Picture)" alt="Producto" />
+	}
+
+<p> ANILLOS TIENE EL CAMBIO </p>

@@ -1,0 +1,265 @@
+﻿/* Todo Index es el Div que contiene todo el sitio (Menos el Menu y el Footer) para Grid. */
+.todoIndex{
+	display: grid;
+}
+/* Primera Seccion / Carrousel con Imagenes. Inicio del Sitio. */
+.carousel {
+	width: 1457px;
+	height: 822px;
+	position: relative;
+	margin: 50px auto;
+}
+
+.carousel img {
+	position: absolute;
+}
+
+.pic {
+	opacity: 0;
+	animation: display 9s infinite;
+}
+
+.pic2 {
+	opacity: 0;
+	animation: display2 9s infinite;
+}
+
+.pic3 {
+	opacity: 0;
+	animation: display3 9s infinite;
+}
+
+
+@keyframes display {
+	0% {
+		opacity: 0;
+	}
+
+	33% {
+		opacity: 1;
+	}
+
+	66% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes display2 {
+	0% {
+		opacity: 0;
+	}
+
+	33% {
+		opacity: 0;
+	}
+
+	66% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes display3 {
+	0% {
+		opacity: 0;
+	}
+
+	33% {
+		opacity: 0;
+	}
+
+	66% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+/* Segunda Seccion: Productos */
+
+.contProductos{
+	display: grid;
+	grid-template-rows: auto auto auto auto;
+	grid-template-columns: 10% auto auto auto;
+}
+
+.proHeader {
+	display: grid;
+	grid-column: 1 / 5;
+	background-color: darkblue;
+	color: white;
+	height: 100px;
+	font-size: 2.5vw;
+	justify-content: center;
+}
+
+.proMenu {
+	display: grid;
+	grid-column: 1 / 2;
+	grid-row: 2 / 5;
+	background-color: darkblue;
+	color: white;
+	font-size: 1.2vw;
+	justify-content: left;
+}
+
+.proMenu ul {
+	list-style-type: none;
+}
+
+.proMenu li, .proMenu a{
+	margin-top: 10%;
+	text-decoration: none;
+	color: white;
+}
+
+.proFoto{
+	display: grid;
+	height: 300px;
+	width: 300px;
+	background-color: black;
+	color: white;
+	margin: 10% auto;
+}
+
+
+
+/* Tercera Seccion: Quienes Somos */
+
+.contQuienes{
+	display: grid;
+	grid-template-columns: 40% 60%;
+	grid-template-rows: auto auto;
+	align-items: center;
+	margin-top: 5%;
+}
+
+.quieHeader {
+	display: grid;
+	grid-column: 1 / 5;
+	background-color: darkblue;
+	color: white;
+	height: 100px;
+	font-size: 3.5vw;
+	justify-content: center;
+	align-content: center;
+}
+
+.quieTexto {
+	display: grid;
+	grid-column: 1 / 2;
+	margin: 10% auto;
+	padding: 10%;
+	font-size: 1.5vw;
+	text-align: center;
+}
+
+.quieFoto {
+	display: grid;
+	grid-column: 2 / 3;
+}
+
+.quieFoto img {
+	justify-content: center;
+	height: 500px;
+	margin: 5% auto;
+}
+
+/* Cuarta Seccion: Contacto */
+
+.contactHeader {
+	background-color: darkblue;
+	color: white;
+	height: 100px;
+	font-size: 3.5vw;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+}
+
+input[type=text], select, textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	resize: vertical;
+}
+
+
+label {
+	padding: 12px 12px 12px 0;
+	display: inline-block;
+}
+
+input[type=submit] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: right;
+}
+
+input[type=submit]:hover {
+		background-color: #45a049;
+	}
+
+/*.container {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+}*/
+
+.col-25 {
+	float: left;
+	width: 25%;
+	margin-top: 6px;
+}
+
+.col-75 {
+	float: left;
+	width: 75%;
+	margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.footerStyle {
+	grid-column: 1 / 5;
+	background-color: darkblue;
+	color: white;
+	height: 50px;
+	font-size: 1vw;
+	justify-content: center;
+	align-content: center;
+}
+
+#volverArriba{
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	font-size: 30px;
+	text-color: black;
+	text-decoration: none;
+}
+
+#volverArriba img {
+	width: 50px;
+	height: 50px;
+}
+

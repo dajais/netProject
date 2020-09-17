@@ -1,0 +1,62 @@
+﻿@inject SignInManager<IdentityUser> signInManager
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - BijouWorld </title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/site.css" />
+	<link rel="stylesheet" href="~/css/styleHome.css" />
+</head>
+<body>
+	<header id="menuHeader">
+		<ul>
+			<li><a asp-controller="Products" asp-action="Index"><img id="logo" src="/img/logo.png" alt=""></a></li>
+			<div id="menu">
+				<li><a asp-controller="Products" asp-action="Index" id="menuIndex">Inicio</a></li>
+				<li><a href="#contProductos" id="menuIndex">Productos</a></li>
+				<li><a href="#contQuienesSomos" id="menuIndex">Quienes Somos</a></li>
+				<li><a href="#contConctact" id="menuIndex">Contacto</a></li>
+
+				@if (signInManager.IsSignedIn(User))
+				{
+					<li><a asp-controller="Products" asp-action="Products" id="menuIndex">Administracion</a></li>
+
+					<li>
+						<form method="post" asp-controller="Account" asp-action="Logout">
+							<button type="submit" class="logoutButton">
+								Logout @User.Identity.Name
+							</button>
+						</form>
+					</li>
+					<li><a asp-controller="ShoppingCart" asp-action="Cart"> <img id="carrito" src="/img/Carrito.png" alt=""></a></li>
+				}
+				else
+				{
+					<li><a asp-controller="Account" asp-action="Login"  id="menuLoginButton">Login</a></li>
+				}
+
+			</div>
+			
+		</ul>
+	</header>
+	<div class="container">
+		<main role="main" class="pb-3">
+			@RenderBody()
+		</main>
+	</div>
+
+	<footer class="footerStyle">
+
+		&copy; 2020 - BijouWorld - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+	</footer>
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+	<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+	@RenderSection("Scripts", required: false)
+</body>
+</html>
